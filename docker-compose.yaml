@@ -4,5 +4,5 @@ services:
     container_name: fsct_training
     build: ./docker_file
     volumes:
-      - ./data:/app/data
-      - ./generated_model:/app/generated_model
+      - ./data:/app/FSCT/data
+      - ./generated_model:/app/FSCT/generated_model
