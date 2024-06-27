@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  fsct:
+    container_name: fsct_training
+    build: ./docker_file
+    volumes:
+      - ./data:/app/data
+      - ./generated_model:/app/generated_model
