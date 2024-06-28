@@ -1,5 +1,5 @@
 # FROM nvidia/cuda:12.5.0-base-ubuntu20.04
-FROM nvidia/cuda:11.1.1-base-ubuntu20.04
+FROM nvidia/cuda:11.1.1-runtime-ubuntu20.04
 
 # export timezone for python3.9
 ENV TZ=Europe/Rome
