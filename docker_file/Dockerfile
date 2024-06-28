@@ -12,10 +12,12 @@ RUN apt-get install -y git
 RUN apt-get install -y nano
 RUN apt-get install -y python3.9
 RUN apt-get install -y python3.9-distutils
+RUN apt-get install -y python3.9-venv
 RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 RUN python3.9 get-pip.py --user
 RUN git clone https://github.com/encoder21/FSCT.git /app/FSCT
 WORKDIR /app/FSCT
-RUN python3.9 -m pip install -r requirements.txt
-CMD python3.9 scripts/train.py
+RUN python3.9 -m venv /fsctvenv
+RUN . /fsctvenv/bin/activate && pip install -r requirements.txt
+CMD . /fsctvenv/bin/activate && python scripts/train.py
 # CMD tail -f /dev/null
