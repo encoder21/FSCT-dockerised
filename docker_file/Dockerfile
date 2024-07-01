@@ -15,6 +15,7 @@ RUN apt-get install -y python3.9-distutils
 RUN apt-get install -y python3.9-venv
 RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 RUN python3.9 get-pip.py --user
+ADD "https://github.com/encoder21/FSCT/commits/main/" latest_commit
 RUN git clone https://github.com/encoder21/FSCT.git /app/FSCT
 WORKDIR /app/FSCT
 RUN python3.9 -m venv /fsctvenv
